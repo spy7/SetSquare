@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SetSquare:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SetSquare.war">
+      <element id="artifact" artifact-name="SetSquare:war exploded" />
+    </root>
+  </artifact>
+</component>
