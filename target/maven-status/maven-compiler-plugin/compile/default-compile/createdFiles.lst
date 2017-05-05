@@ -1,1 +1,11 @@
+com\websystique\springmvc\configuration\HelloWorldInitializer.class
+com\websystique\springmvc\security\SecurityConfiguration.class
+com\websystique\springmvc\configuration\HelloWorldConfiguration.class
 com\spyseven\controller\HelloWorldController.class
+com\websystique\springmvc\configuration\CORSFilter.class
+com\websystique\springmvc\security\CustomBasicAuthenticationEntryPoint.class
+com\websystique\springmvc\security\SecurityWebApplicationInitializer.class
+com\websystique\springmvc\model\User.class
+com\websystique\springmvc\service\UserService.class
+com\websystique\springmvc\service\UserServiceImpl.class
+com\websystique\springmvc\controller\HelloWorldRestController.class
