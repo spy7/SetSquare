@@ -6,88 +6,86 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "user")
 public class User {
 
-	private long id;
-	
-	private String name;
-	
-	private int age;
-	
-	private double salary;
+    private long id;
 
-	public User(){
-		id=0;
-	}
-	
-	public User(long id, String name, int age, double salary){
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.salary = salary;
-	}
-	
-	@XmlElement
-	public long getId() {
-		return id;
-	}
+    private String name;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    private int age;
 
-	@XmlElement
-	public String getName() {
-		return name;
-	}
+    private double salary;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public User() {
+        id = 0;
+    }
 
-	@XmlElement
-	public int getAge() {
-		return age;
-	}
+    public User(long id, String name, int age, double salary) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    @XmlElement
+    public long getId() {
+        return id;
+    }
 
-	@XmlElement
-	public double getSalary() {
-		return salary;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
+    @XmlElement
+    public String getName() {
+        return name;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
+    @XmlElement
+    public int getAge() {
+        return age;
+    }
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", age=" + age
-				+ ", salary=" + salary + "]";
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @XmlElement
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (int) (id ^ (id >>> 32));
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        User other = (User) obj;
+        return id == other.id;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", name=" + name + ", age=" + age
+                + ", salary=" + salary + "]";
+    }
 
 
 }

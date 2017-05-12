@@ -14,30 +14,19 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	private static String REALM="MY_TEST_REALM";
-	
-	@Autowired
-	public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("bill").password("abc123").roles("ADMIN");
-		auth.inMemoryAuthentication().withUser("tom").password("abc123").roles("USER");
-	}
-	
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
- 
-	  http.csrf().disable()
-	  	.authorizeRequests()
-	  	.antMatchers("/user/**").hasRole("ADMIN")
-		.and().httpBasic().realmName(REALM).authenticationEntryPoint(getBasicAuthEntryPoint());
- 	}
-	
-	@Bean
-	public CustomBasicAuthenticationEntryPoint getBasicAuthEntryPoint(){
-		return new CustomBasicAuthenticationEntryPoint();
-	}
-	
+    @Autowired
+    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication().withUser("bill").password("abc123").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser("tom").password("abc123").roles("USER");
+    }
+
     @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
+    protected void configure(HttpSecurity http) throws Exception {
+
+        http
+                .csrf().disable()
+                .authorizeRequests().antMatchers("/login").permitAll()
+                .antMatchers("/", "/user/**").hasRole("USER")
+                .and().formLogin();
     }
 }

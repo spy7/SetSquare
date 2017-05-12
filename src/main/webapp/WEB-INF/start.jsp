@@ -2,38 +2,13 @@
 <html>
 <head>
     <title>AngularJS BasicAuthenication Example</title>
-    <style>
-        .username.ng-valid {
-            background-color: lightgreen;
-        }
-
-        .username.ng-dirty.ng-invalid-required {
-            background-color: red;
-        }
-
-        .username.ng-dirty.ng-invalid-minlength {
-            background-color: yellow;
-        }
-
-        .email.ng-valid {
-            background-color: lightgreen;
-        }
-
-        .email.ng-dirty.ng-invalid-required {
-            background-color: red;
-        }
-
-        .email.ng-dirty.ng-invalid-email {
-            background-color: yellow;
-        }
-
-    </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="<c:url value="/resources/css/app.css"/>"/>
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"/>
 </head>
 <body ng-app="myApp">
 <div class="generic-container" ng-controller="UserController as ctrl">
+    <a href="<c:url value="/logout"/>">Logout</a>
     <div class="panel panel-default">
         <div class="panel-heading"><span class="lead">User Registration Form </span></div>
         <div class="formcontainer">
